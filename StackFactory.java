@@ -20,7 +20,7 @@ public class StackFactory {
             return new StackSinglyLinkedList<Integer>();
            
         }else if(lista.equals("Double")){
-             return new StackSinglyLinkedList<Integer>();
+             return new StackDoublyLinkedList<Integer>();
         }
         return null;
     }

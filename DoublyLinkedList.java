@@ -20,11 +20,19 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
     count = 0;
     }
 
+
+    /**
+     * @return int
+     */
     @Override
     public int size() {
         return count;
     }
 
+
+    /**
+     * @param value
+     */
     @Override
     public void add(T value) {
 
@@ -35,21 +43,23 @@ public class DoublyLinkedList<T> extends AbstractList<T> {
         count++;
     }
 
+
+    /**
+     * @return T
+     */
     @Override
     public T remove() {
 
-        DoublyLinkedNode<T> temp = tail;
-        tail = tail.previous();
-        if (tail == null) {
-            head = null;
-        } else {
-            tail.setNext(null);
-        }
+        DoublyLinkedNode<T> temp = head;
+        head = head.next(); // move head down list
         count--;
         return temp.value();
-
     }
 
+
+    /**
+     * @return T
+     */
     @Override
     public T get() {
         return head.get();
