@@ -14,13 +14,13 @@ public class StackFactory {
         }else if(lista.equals("ArrayList")){
             return new StackVector<Integer>();
             /**
-            *version sin implementacion de listas
+            *version con implementacion de listas
             */
         }else if(lista.equals("Simple")){
-            return new StackVector<Integer>();
+            return new StackSinglyLinkedList<Integer>();
            
         }else if(lista.equals("Double")){
-             return new StackVector<Integer>();
+             return new StackSinglyLinkedList<Integer>();
         }
         return null;
     }
