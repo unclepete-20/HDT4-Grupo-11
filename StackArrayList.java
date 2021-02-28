@@ -1,16 +1,8 @@
-/************************************
- * @author Gabriel Vicente 20498 y Pedro Arriola 20188
- * Universidad del Valle de Guatemala
- * Algoritmos y Estructuras de Datos
- * Seccion 10
- * Grupo #11
- ************************************/
-
 import java.util.ArrayList;
 
 /**
  *
- * @param <T> clase StackVector que implementa Stack segun lo acordado con el salón
+ * @param <T> clase StackArraylist que implementa Stack segun lo acordado con el salón
  */
 public class StackArrayList<T> implements Stack<T>{
     /***

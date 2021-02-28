@@ -1,90 +1,64 @@
-/************************************
- * @author Gabriel Vicente 20498 y Pedro Arriola 20188
- * Universidad del Valle de Guatemala
- * Algoritmos y Estructuras de Datos
- * Seccion 10
- * Grupo #11
- ************************************/
-
-import java.util.EmptyStackException;
 import java.util.Vector;
 
-public class StackVector<T> implements Stack<T> {
+/**
+ *
+ * @param <T> clase StackVector que implementa Stack segun lo acordado con el salón
+ */
+public class StackVector<T> implements Stack<T>{
+    /***
+     * se crea un vector con el generico para que el desarrollador decida que hacer con el
+     */
 
-    protected Vector<T> data;
-
-    public StackVector() {
-        // Se crea un stack vacio.
-        data = new Vector<T>();
-    }
-
-    // Sobrecarga de StackVector para que acepte un tamaño definido.
-    public StackVector(int size) {
-        // Se crea un stack vacio con la cantidad que se quiera definir.
-        data = new Vector<T>(size);
-    }
-
+    Vector <T> stack = new Vector<T>();
 
     /**
-     * Pre: Se ingresa dato.
-     * @param item recibe dato para ingresar al stack.
-     * Post: Se almacena en Stack.
+     *
+     * @param num equivalente a agregar un elemento al vector
      */
     @Override
-    public void push(T item) {
-        data.add(item);
+    public void push(T num) {
+        stack.add(num);
     }
 
-
-    /**
-     * Pre:Indice - 1 para el dato en Stack.
-     * @return E cualquier tipo de dato.
-     * Post:Regresa el dato eliminado.
-     */
-    @Override
-    public T pop() {
-
-        return data.remove(size() - 1);
-    }
-
-
-    /**
-     * Pre: Revisa el valor mas cercano.
-     * @return E valor deseado.
-     * @throws EmptyStackException
-     * Post: Devuelve el valor inmediato del stack.
-     */
-    @Override
-    public T peek() throws EmptyStackException {
-        if(data.isEmpty()){
-            throw new EmptyStackException();
-        }
-
-        return data.elementAt(data.size()-1);
-    }
-
-
-    /**
-     * Pre: Verifica si el stack esta vacio.
-     * @return boolean
-     * Post: Regresa falso si no esta vacio, verdadero si esta vacio.
+    /***
+     *
+     * @return esta vacio true no esta vacio false
      */
     @Override
     public boolean empty() {
-
-        return data.isEmpty();
+        boolean cantidad = false;
+        if (stack.size()==0){
+            cantidad = true;
+        }
+        return cantidad;
     }
 
-
-    /**
-     * Pre: Analiza el stack.
-     * @return int
-     * Post: Devuelve el tamaño del stack.
+    /***
+     *
+     * @return cantidad en el vector
      */
     @Override
     public int size() {
-
-        return data.size();
+        return stack.size();
     }
 
+    /**
+     *
+     * @return quita ultimo valor del vector no sin antes regresarlo cono return
+     */
+    @Override
+    public T pop() {
+        T num = peek();
+        stack.removeElementAt(stack.size()-1);
+        return num;
+    }
+
+    /***
+     *
+     * @return regresa el ultimo valor del vector sin quitarlo.
+     */
+    @Override
+    public T peek() {
+        return stack.get(stack.size()-1);
+    }
 }

@@ -1,11 +1,3 @@
-/************************************
- * @author Gabriel Vicente 20498 y Pedro Arriola 20188
- * Universidad del Valle de Guatemala
- * Algoritmos y Estructuras de Datos
- * Seccion 10
- * Grupo #11
- ************************************/
-
 /**
  * Interfaz de la Pila/Stack que se ejemplifica en la hoja de trabajo archvio
  * @param <T> parametro a analizar que dependiendo el desarrolladar cambiara sus retornos pero no la funcionalidad
@@ -14,7 +6,7 @@ public interface Stack<T> {
     /**
      * @param num equivalente a agregar un elemento al vector
      */
-    void push(T num);
+    void    push(T num);
 
     /***
      *
@@ -26,17 +18,17 @@ public interface Stack<T> {
      *
      * @return regresa la cantidad de elementos en el vector
      */
-    int size();
+    int     size();
 
     /**
      *
      * @return quita el ultimo valor del vector y lo pasa al metodo que lo necesito con el valor que antes estaba en el vector
      */
-    T pop();
+    T       pop();
 
     /**
      *
      * @return equivalente al get del vector
      */
-    T peek();
+    T       peek();
 }
